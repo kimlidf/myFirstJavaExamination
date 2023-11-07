@@ -11,9 +11,9 @@ public class InputHandlerTest {
         public void countCharactersTest(){
             inputHandler.countCharacters("Trying this out!");
             int actual = inputHandler.getCharacters();
-            int exptected = 16;
+            int expected = 16;
 
-            assertEquals(exptected, actual);
+            assertEquals(expected, actual);
         }
 
         @Test
@@ -26,7 +26,7 @@ public class InputHandlerTest {
 
         }
         @Test
-        public void multipleLinesTest(){
+        public void multipleLinesTest() {
             inputHandler.countLines();
             inputHandler.countCharacters("Min första rad text");
             inputHandler.countLines();
@@ -35,9 +35,23 @@ public class InputHandlerTest {
             int expected = 2;
 
             assertEquals(expected, actual);
+        }
+        @Test
+        public void setStopTest(){
+                inputHandler.setStop(true);
+                boolean actual = inputHandler.getStop();
+                boolean expected = true;
 
+                assertEquals(expected, actual);
+            }
+
+        @Test
+        public void getLongestWordTest() {
+             inputHandler.countWords("The longest word is this");
+             String actual = inputHandler.getLongestWord();
+             String expected = "longest";
+
+             assertEquals(expected, actual);
         }
 
     }
-
-
